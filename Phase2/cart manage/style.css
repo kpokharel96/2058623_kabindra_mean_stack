@@ -1,0 +1,42 @@
+section.latest-posts{
+    margin-top: 10px;
+}
+
+.blog-post {
+    margin-left: 200px;
+    margin-top: 10px;
+  }
+
+.blog-post .post-thumbnail img {
+    margin-bottom: 10px;
+  }
+
+.container{
+    margin-top: 20px;
+}
+
+.form-label{
+    font-weight: bold;
+}
+
+.post{
+    border-style: solid;
+    margin-left: 10px;
+}
+.btn {
+    position: relative;
+    margin-left: 70px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+.container2{
+    margin: auto;
+    margin-top: 100px;
+    width: 60%;
+    padding: 10px;
+    width: 500px;
+    height: 500px;
+    border: 5px solid black;
+    box-sizing: border-box;
+}

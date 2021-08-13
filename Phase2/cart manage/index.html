@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="add.js"></script>
+</head>
+
+<body>
+    
+   
+    <div class="container">
+        <div id="cartSize">
+            <label>Cart Size:</label>
+        </div>
+        <div class="row">
+            <div class="post col-md-3">
+                <h2 id="laptop">Name: Pen</h2>
+                <h2 id="laptopPrice">Price: $12</h2>
+                <button type="button" class="btn btn-primary" onclick="add('Pen','12')">Add</button>
+            </div>
+            <div class="post col-md-3">
+                <h2>Name: Coffee</h2>
+                <h2>Price: $30</h2>
+                <button type="button" class="btn btn-primary" onclick="add('Coffee','30')">Add</button>
+            </div>
+            <div class="post col-md-3">
+                <h2>Name: Dumbell</h2>
+                <h2>Price: $150</h2>
+                <button type="button" class="btn btn-primary" onclick="add('Dumbell','150')">Add</button>
+            </div>
+        </div>
+        <div>
+            <a href="checkout.html">checkout</a>
+        </div>
+
+    </div>
+</body>
+
+</html>
