@@ -1,0 +1,71 @@
+<div>
+<div *ngIf="flag1">
+    <h2>Login</h2>
+   <form [formGroup] = "loginRef" (ngSubmit)="checkUser()" >
+       <label>Username</label>
+       <input type="text" formControlName="user">
+       <br>
+       <label>Password</label>
+       <input type="password" formControlName="pass">
+       <br>
+       <input type="submit" value="Login">
+       <input type="button" value="SignUp" (click)="rePort()">
+       {{msg1}}
+   </form>
+</div>
+
+
+<div *ngIf="flag">
+    <h2>Registration Form</h2>
+   <form [formGroup]="signupRef" (ngSubmit)="registerUser()">
+       <label>First Name</label>
+       <input type="text" formControlName="firstName">
+       <br>
+       <label>Last Name</label>
+       <input type="text" formControlName="lastName">
+       <br>
+       <label>UserName</label>
+       <input type="text" formControlName="userName">
+       <br>
+       <label>Password</label>
+       <input type="password" formControlName="password">
+       <br>
+       <input type="submit" value="Register" >
+       <input type="reset" value="Reset">
+       <input type="button" value="Login" (click)="reLogin()">
+   </form>
+</div>
+
+<div *ngIf="flag2">
+<h2>My Portfolio</h2>
+<h4>Welcome {{name}}</h4>
+   <form [formGroup]="portfolio" (ngSubmit)="onSave()">
+       <label>Contact Name</label>
+       <input type="text" formControlName="contact">
+       <br>
+       <label>Phone No.</label>
+       <input type="text" formControlName="phone">
+       <input type="submit" value="Save">
+   </form>
+</div>
+<div *ngIf="flag3">
+   <h2>Contact Details</h2>
+   <table border="1">
+       <tbody>
+           <tr>
+               <th>Name</th>
+               <th>Phone No.</th>
+           </tr>
+           <tr *ngFor="let contact of contacts">
+               <td>{{contact.contact}}</td>
+               <td>{{contact.phone}}</td>
+           </tr>
+       </tbody>
+      
+   </table>
+</div>
+</div>
+
+
+
+
