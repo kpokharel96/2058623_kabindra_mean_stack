@@ -1,0 +1,66 @@
+<mat-toolbar>
+    <span style="margin:auto">Task Tracker</span>
+</mat-toolbar>
+<div>
+<mat-grid-list cols="2" gutterSize="2px" rowHeight="400px" >
+    <mat-grid-tile [style.background]="'skyblue'" colspan="1" rowspan="1">  
+        <div>
+        <mat-grid-tile-header>To Do Tasks</mat-grid-tile-header>  
+        <!-- <mat-form-field [formGroup]="todoRef" (ngSubmit)="addTask()">                       -->
+            <form #taskForm="ngForm" (ngSubmit)="addTask(taskForm)">
+ 
+                <div class="settings">
+                  <label for="id">ID: </label>
+                  <input type="text" name="id" ngModel><br/>
+                </div>
+               
+                <div class="settings">
+                  <label for="name">Name:</label>
+                  <input type="text" name="name" ngModel><br/>
+                </div>
+                  <div class="settings">
+                    <label for="task">Task:</label>
+                    <input type="text" name="task" ngModel><br/>
+                </div>
+                    <div class="settings">
+                    <label for="deadline">Deadline:</label>
+                    <input type="date" name="deadline" ngModel><br/>
+                </div>
+                
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                  
+
+            </form>
+        <!-- </mat-form-field>  -->
+    </div>  
+    </mat-grid-tile>                
+    <mat-grid-tile [style.background]="'skyblue'">
+        <mat-grid-tile-header>To Do List</mat-grid-tile-header>
+        <div *ngIf="flag">
+        <table border="1" style="background-color:#00FF00">
+            <tr>
+                <th>Emp Id</th>
+                <th>Emp Name</th>
+                <th>Task</th>
+                <th>Deadline</th>
+            </tr>
+            <tr *ngFor="let result of resultArray">   
+                    <td>{{result.id}}</td>
+                   <td>{{result.name}}</td>
+                   <td>{{result.task}}</td>
+                   <td>{{result.deadline}}</td>
+            </tr>
+        </table>
+    </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<!-- <mat-form-field [formGroup]="todoRef" (ngSubmit)="addTask()">                      
+    <form [formGroup]="todoRef" (ngSubmit)="addTask()">               
+        <mat-label>Id:    </mat-label>
+        <input matInput="text" formControlName="id">
+    </form>  
+</mat-form-field>  -->
+
