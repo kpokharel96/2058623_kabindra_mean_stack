@@ -1,0 +1,37 @@
+[
+    {
+        "id":1,
+        "question": "What is the first name of Einstien?",
+        "options":["Albert","Joseph","Michael","John"],
+        "correct":"Albert"
+
+    },
+    {
+        "id":2,
+        "question": "Who is the father of Computer Science?",
+        "options":["Charles Babbage","Lady Gaga","John Cena","Mona Lisa"],
+        "correct":"Charles Babbage"
+
+    },
+    {
+        "id":3,
+        "question": "What is the full form of USA?",
+        "options":["United States of America","United Service of America","United Sweden of America","United Saint of America"],
+        "correct":"United States of America"
+
+    },
+    {
+        "id":4,
+        "question": "What makes a man perfect?",
+        "options":["Practice","Pain","Paper","Page"],
+        "correct":"Practice"
+
+    },
+    {
+        "id":5,
+        "question": "What is the capital city of USA?",
+        "options":["Colorado","Texas","Washington DC","Virginia"],
+        "correct":"Washington DC"
+
+    }
+]

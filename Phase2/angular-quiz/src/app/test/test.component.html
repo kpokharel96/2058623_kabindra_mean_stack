@@ -1,0 +1,49 @@
+
+<div *ngIf="!this.testService.getTestSubmitted()">
+    <form #testForm="ngForm" (ngSubmit)="checkAnswer(testForm)">
+        <div *ngFor="let test of this.testService.getTestData()">
+            <label>{{test.id}}. {{test.question}}</label><br>
+            <input type="radio"  name="{{test.question}}" value="{{test.options[0]}}" ngModel>
+            <label for="html">{{test.options[0]}}</label><br>
+            <input type="radio"  name="{{test.question}}" value="{{test.options[1]}}" ngModel>
+            <label for="html">{{test.options[1]}}</label><br>
+            <input type="radio"  name="{{test.question}}" value="{{test.options[2]}}" ngModel>
+            <label for="html">{{test.options[2]}}</label><br>
+            <input type="radio"  name="{{test.question}}" value="{{test.options[3]}}" ngModel>
+            <label for="html">{{test.options[3]}}</label><br>
+            <hr>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+<ng-template #content>* wrong answer</ng-template>
+<div *ngIf="this.testService.getTestSubmitted()">
+    <div *ngFor="let test of this.testService.getTestData()">
+        <label>{{test.id}}. {{test.question}}</label><br>
+
+        <input type="radio"  name="{{test.question}}" value="{{test.options[0]}}">
+        <label for="html">{{test.options[0]}}</label>
+        <span style="color: green; font-weight: bold;margin-left: 20px;" *ngIf="this.testService.isRightAnswer(test.question,test.options[0])">*this is correct</span>
+        <span style="color:red;font-weight: bold;margin-left: 20px;" *ngIf="this.testService.checkOption(test.question,test.options[0])">*wrong answer</span><br>
+        
+        <input type="radio"  name="{{test.question}}" value="{{test.options[1]}}" >
+        <label for="html">{{test.options[1]}}</label>
+        <span style="color: green;font-weight: bold;margin-left: 20px;" *ngIf="this.testService.isRightAnswer(test.question,test.options[1])">*this is correct</span>
+        <span style="color: red;font-weight: bold;margin-left: 20px;" *ngIf="this.testService.checkOption(test.question,test.options[1])">*wrong answer</span><br>
+        
+        <input type="radio"  name="{{test.question}}" value="{{test.options[2]}}" >
+        <label for="html">{{test.options[2]}}</label>
+        <span style="color: green;font-weight: bold;margin-left: 20px;" *ngIf="this.testService.isRightAnswer(test.question,test.options[2])">*this is correct</span>
+        <span style="color: red;font-weight: bold;margin-left: 20px;" *ngIf="this.testService.checkOption(test.question,test.options[2])">*wrong answer</span><br>
+        
+        <input type="radio"  name="{{test.question}}" value="{{test.options[3]}}" >
+        <label for="html">{{test.options[3]}}</label>
+        <span style="color: green;font-weight: bold;margin-left: 20px;" *ngIf="this.testService.isRightAnswer(test.question,test.options[3])">*this is correct</span>
+        <span style="color: red;font-weight: bold;margin-left: 20px;" *ngIf="this.testService.checkOption(test.question,test.options[3])">*wrong answer</span><br>
+        <hr>
+    </div>
+    <div *ngIf="this.testService.getPass();then passContent else failContent"></div>
+    <ng-template #passContent><label style="color: green;font-weight: bold;">Result: {{this.testService.getScore()}} / {{this.testService.totalQuestion()}} : {{this.testService.getStatus()}}!</label> </ng-template>
+    <ng-template #failContent ><label style="color: red; font-weight: bold;">Result: {{this.testService.getScore()}} / {{this.testService.totalQuestion()}} : {{this.testService.getStatus()}}!</label> </ng-template>
+</div>
+
