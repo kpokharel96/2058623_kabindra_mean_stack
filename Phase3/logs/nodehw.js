@@ -24,6 +24,7 @@ else{
     let emailId = readline.questionEMail("Enter your email id: ")
     debugger;
     let time_date=new Date().toLocaleString();
+    debugger;
     let records=[]
         records.push({firstname,lastname,gender,emailId,time_date});
         fs.writeFileSync("records.json",JSON.stringify(records))
