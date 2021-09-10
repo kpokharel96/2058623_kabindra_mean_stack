@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+    <!-- <script src='main.js'></script> -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- <script src="app.js"></script> -->
+    <script type="text/JavaScript">
+
+        var socket = io();
+        var sendMessage = () =>{
+            var name = document.getElementById("fname").value;
+            socket.emit("message",name)
+            
+            var msg1 = document.getElementById("message").value;
+            socket.emit("message1",msg1)
+    
+            document.getElementById("fname").value="";
+            document.getElementById("message").value="";
+
+            document.querySelector('h4').innerHTML += name + " : " + msg1 + '<br/>';
+
+            //console.log("Hello") 
+            
+            
+        }
+        socket.on("obj",(data)=>{
+            //document.write(document.getElementByClassName('chat'))
+            //document.write(data)
+            
+            document.querySelector('h4').innerHTML += "Server Message : "+ data + '<br/>';
+            //socket.emit("obj1",data)
+            //console.log(data)
+           
+            
+        })
+        
+        
+        
+        
+    </script>
+</head>
+<body>
+    <div class="chat">
+    <h2>Chat Application</h2>
+    <label for="fname">Name:</label>
+     <input type="text" id="fname" name="fname"><br><br>
+     <label for="message">Message:</label>
+    <input type="text" id="message" name="message"><br><br>
+    <button onclick="sendMessage()"> Send </button>
+    <h4></h4>
+    </div>
+</body>
+</html>
